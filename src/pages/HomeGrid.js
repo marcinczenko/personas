@@ -1,5 +1,5 @@
 import glamorous from 'glamorous'
-import { Grid } from '../helpers/Grid'
+import { Grid } from 'helpers/Grid'
 
 let grid = new Grid(['sidebar content'], {
   gridTemplateColumns: '1fr 3fr'
