@@ -26,7 +26,7 @@ export class Grid {
   }
 
   getGridTemplateColumns() {
-    const columns = Math.max(...this.grid.map(e => e.split(/\s*/).length))
+    const columns = Math.max(...this.grid.map(e => e.split(/\s+/).length))
     return [...Array(columns).keys()].map(() => '1fr').join(' ')
   }
 
@@ -35,7 +35,7 @@ export class Grid {
   }
 
   applyToStyles(styles) {
-    const gridAreas = new Set(this.grid.join(' ').split(/\s*/))
+    const gridAreas = new Set(this.grid.join(' ').split(/\s+/))
     const gridElements = [...gridAreas].reduce((acc, value) => {
       acc[value] = { gridArea: value }
       return acc
@@ -53,7 +53,7 @@ export class Grid {
   }
 
   createGridAreas() {
-    const gridAreas = new Set(this.grid.join(' ').split(/\s*/))
+    const gridAreas = new Set(this.grid.join(' ').split(/\s+/))
     const gridElements = [...gridAreas].reduce((acc, value) => {
       acc[value] = { gridArea: value }
       return acc
